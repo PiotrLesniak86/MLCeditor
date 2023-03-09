@@ -2,9 +2,11 @@ from pydicom import dcmread
 from os import system
 from math import floor
 from sys import argv
-
-source = argv[1]
-ds = dcmread(source, force=True)
+try:
+    source = argv[1]
+    ds = dcmread(source, force=True)
+except:
+    print("Exception occured")
 
 # ####################################################################
 # #ds-
